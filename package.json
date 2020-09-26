@@ -1,0 +1,22 @@
+{
+  "name": "rutracker-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-dlm": "cd dsm-plugin && tar zcf rutracker.dlm INFO search.php"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "iconv-lite": "^0.6.2",
+    "windows-1251": "^1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
+}

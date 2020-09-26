@@ -1,0 +1,10 @@
+{
+  "name": "rutracker",
+  "displayname": "Rutracker",
+  "description": "Custom build rutracker search by Pavel Sakalo!",
+  "version": "1.0",
+  "site": "http://rutracker.org/",
+  "module": "search.php",
+  "type": "search",
+  "class": "SynoDLMSearchRutracker"
+}
