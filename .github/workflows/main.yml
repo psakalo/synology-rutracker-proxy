@@ -38,3 +38,9 @@ jobs:
           push: true
           tags: |
             ghcr.io/psakalo/synology-rutracker-proxy:latest
+
+      - name: Deploy onto Synology
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Deploy to Synology
+          token: ${{ secrets.SYNOLOGY_REPO_TOKEN }}
