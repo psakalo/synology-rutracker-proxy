@@ -21,12 +21,11 @@ app.get("/search", (req, res) => {
     .then((result) => {
       res.json({ torrents: result });
     })
-    .catch((error) => {
-      console.error(
-        "Rutracker search failed. Original error message: " + error.message
-      );
+    .catch((originalError) => {
+      const error = new VError(originalError, 'Rutracker search failed');
+      console.error(error);
 
-      res.status(500).send(error);
+      res.status(500).send(error.message);
     });
 });
 
@@ -48,8 +47,10 @@ app.get("/download", async (req, res) => {
       response.headers["content-disposition"]
     );
     res.send(response.data);
-  } catch (error) {
-    res.status(500).send(error);
+  } catch (originalError) {
+    const error = new VError(originalError, 'Rutracker download failed');
+    console.error(error)
+    res.status(500).send(error.message);
   }
 });
 
