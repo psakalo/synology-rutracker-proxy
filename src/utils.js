@@ -3,5 +3,5 @@ function getAppPort() {
 }
 
 module.exports = {
-  getAppPort
-}
+  getAppPort,
+};

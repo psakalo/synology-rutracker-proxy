@@ -1,7 +1,7 @@
 const express = require("express");
-const {getAppPort} = require("./src/utils");
-const {rutrackerAuthorize} = require("./src/authorize-middleware");
-const {download, search} = require("./src/rutracker-api");
+const { getAppPort } = require("./src/utils");
+const { rutrackerAuthorize } = require("./src/authorize-middleware");
+const { download, search } = require("./src/rutracker-api");
 
 const app = express();
 const port = getAppPort();

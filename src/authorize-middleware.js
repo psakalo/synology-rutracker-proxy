@@ -1,5 +1,5 @@
 const VError = require("verror");
-const {authorize} = require("./rutracker-api");
+const { authorize } = require("./rutracker-api");
 
 let cookies = null;
 
@@ -17,7 +17,7 @@ function rutrackerAuthorize(req, res, next) {
         next();
       })
       .catch((originalError) => {
-        const error = new VError(originalError, 'Failed to login to rutracker');
+        const error = new VError(originalError, "Failed to login to rutracker");
         console.error(error);
 
         res.status(500).send(error.message);
@@ -29,5 +29,5 @@ function rutrackerAuthorize(req, res, next) {
 }
 
 module.exports = {
-  rutrackerAuthorize
-}
+  rutrackerAuthorize,
+};

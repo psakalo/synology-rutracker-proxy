@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const { URL, URLSearchParams } = require("url");
 const windows1251 = require("windows-1251");
 const VError = require("verror");
-const {getAppPort} = require("./utils");
+const { getAppPort } = require("./utils");
 
 const RUTRACKER_BASE_URL = "https://rutracker.org";
 const RUTRACKER_LOGIN_URL = RUTRACKER_BASE_URL + "/forum/login.php";
@@ -35,7 +35,7 @@ async function authorize(username, password) {
       const match = /src="(.*?captcha.*?)"/.exec(response.data);
       const captchaUrl = match[1];
       if (match) {
-        throw new VError('Captcha with url %s is detected ', captchaUrl);
+        throw new VError("Captcha with url %s is detected ", captchaUrl);
       }
     }
 
@@ -67,7 +67,7 @@ async function search(
   sort = SortingColumn.downloads
 ) {
   if (!cookies) {
-    throw new VError('cookies are not specified');
+    throw new VError("cookies are not specified");
   }
 
   const url = new URL(RUTRACKER_SEARCH_URL);
@@ -126,7 +126,7 @@ async function search(
 
 function download(cookies, torrentId) {
   if (!cookies) {
-    throw new VError('cookies are not specified');
+    throw new VError("cookies are not specified");
   }
 
   const url = new URL(RUTRACKER_DOWNLOAD_URL);
@@ -147,5 +147,5 @@ module.exports = {
   SortingOrder,
   SortingColumn,
   search,
-  download
-}
+  download,
+};
