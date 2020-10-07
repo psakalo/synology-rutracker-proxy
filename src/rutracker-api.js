@@ -3,11 +3,14 @@ const cheerio = require("cheerio");
 const { URL, URLSearchParams } = require("url");
 const windows1251 = require("windows-1251");
 const VError = require("verror");
+const {getAppPort} = require("./utils");
 
 const RUTRACKER_BASE_URL = "https://rutracker.org";
 const RUTRACKER_LOGIN_URL = RUTRACKER_BASE_URL + "/forum/login.php";
 const RUTRACKER_SEARCH_URL = RUTRACKER_BASE_URL + "/forum/tracker.php";
 const RUTRACKER_DOWNLOAD_URL = RUTRACKER_BASE_URL + "/forum/dl.php";
+
+const port = getAppPort();
 
 async function authorize(username, password) {
   const body = new URLSearchParams();

@@ -1,10 +1,10 @@
 const express = require("express");
-const VError = require("verror");
+const {getAppPort} = require("./src/utils");
 const {rutrackerAuthorize} = require("./src/authorize-middleware");
 const {download, search} = require("./src/rutracker-api");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = getAppPort();
 
 app.use(rutrackerAuthorize);
 
