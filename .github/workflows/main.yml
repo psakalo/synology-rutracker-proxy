@@ -44,3 +44,4 @@ jobs:
         with:
           workflow: Deploy to Synology
           token: ${{ secrets.SYNOLOGY_REPO_TOKEN }}
+          repo: psakalo/synology-scripts
